@@ -69,6 +69,7 @@ section {
   padding-left: 0;
   margin: 0;
   text-align: right;
+  overflow: hidden;
 }
 
 .navbar__menu li {
@@ -88,18 +89,11 @@ section {
   color: #fff;
   transition: ease 0.3s all;
 }
-.navbar__menu .menu__link.link {
-  background: #333;
-  color: rgb(225, 31, 31);
-  transition: ease 0.3s all;
-}
-/* nav bar activation */
-
-.navbar__menu .menu__link--active {
+.navbar__menu .menu__link.active {
   background: #333;
   color: #fff;
+  transition: ease 0.3s all;
 }
-
 /* Header Styles */
 .page__header {
   background: #fff;

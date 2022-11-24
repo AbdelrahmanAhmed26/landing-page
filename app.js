@@ -22,7 +22,7 @@
  * Define Global Variables
  *
  */
-const ul = document.getElementById("menu_list");
+const ul = document.getElementById("navbar__list");
 const sections = document.querySelectorAll("section");
 const Fragment = document.createDocumentFragment();
 /**
@@ -48,7 +48,7 @@ function navbar() {
     linksNav.textContent = sectionDataNav;
     linksNav.addEventListener("click", function (event) {
       event.preventDefault();
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: "smooth", block: "center" });
     });
     linksNav.classList = "menu__link";
     listsNav.appendChild(linksNav);
@@ -57,11 +57,10 @@ function navbar() {
   ul.appendChild(Fragment);
 }
 // Add class 'active' to section when near top of viewport
-window.addEventListener("scroll", function () {
+document.addEventListener("scroll", function () {
   sections.forEach((section) => {
     const estops = section.getBoundingClientRect().top;
     const link = document.querySelector(`a[href="#${section.id}"]`);
-    console.log(link);
     if (estops > 0 && estops < 250) {
       section.classList.add("your-active-class");
       link.classList.add("active");
@@ -71,6 +70,8 @@ window.addEventListener("scroll", function () {
     }
   });
 });
+//Responsive navbar
+
 // Scroll to anchor ID using scrollTO event
 
 /**
